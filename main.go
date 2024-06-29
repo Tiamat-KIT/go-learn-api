@@ -31,7 +31,7 @@ func main() {
 				fmt.Fprintf(w, "Hello %s!\n", name)
 			},
 		},
-		{
+		/* {
 			"/employee/new",
 			func(w http.ResponseWriter, r *http.Request) {
 				fmt.Fprintf(w, "Process!\n")
@@ -78,7 +78,7 @@ func main() {
 			func(w http.ResponseWriter, r *http.Request) {
 				fmt.Fprintf(w, "Process!\n")
 			},
-		},
+		}, */
 		{
 			"/view/request",
 			func(w http.ResponseWriter, r *http.Request) {
