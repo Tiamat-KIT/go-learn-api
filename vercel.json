@@ -1,12 +1,17 @@
 {
+    "version": 2,
+    "name": "utakata-go-api",
     "build": {
         "env": {
             "GO_BUILD_FLAGS": "-ldflags '-s -w'"
         }
     },
-    "rewrites": [{
-        "source": "/api","destination": "/api"
-    }],
+    "builds": [
+        {
+            "src": "*.go",
+            "use": "@vercel/go"
+        }
+    ],
     "headers": [
         {
             "source": "/api/(.*)",
