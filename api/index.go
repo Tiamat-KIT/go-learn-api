@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+// https://qiita.com/mugi111/items/9063e7c6d9e86164d6c3#verceljson%E3%81%AE%E4%BD%9C%E6%88%90
+
 type Paths struct {
 	path    string
 	process func(http.ResponseWriter, *http.Request)
@@ -21,6 +23,12 @@ func handle_paths(paths_objs []*Paths) {
 func main() {
 	log.Print("starting server...")
 	paths_objs := []*Paths{
+		{
+			"/",
+			func(w http.ResponseWriter, r *http.Request) {
+				fmt.Fprintf(w, "Hello World!\n")
+			},
+		}
 		{
 			"/hello",
 			func(w http.ResponseWriter, r *http.Request) {
